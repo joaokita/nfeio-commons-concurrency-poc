@@ -7,6 +7,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{25765AB8-44D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NFEio.Commons.Concurrency", "src\NFEio.Commons.Concurrency\NFEio.Commons.Concurrency.csproj", "{75619AE3-5AE7-4F74-8791-7E9328A4E440}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4D142E78-4ED8-4D1F-BB2F-8D0C6D877BBD}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\Users\JoãoKita\Downloads\azure-pipelines.yml = ..\..\..\..\..\Users\JoãoKita\Downloads\azure-pipelines.yml
+		..\..\..\..\..\Users\JoãoKita\Downloads\nuget.config = ..\..\..\..\..\Users\JoãoKita\Downloads\nuget.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
