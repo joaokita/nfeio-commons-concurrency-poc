@@ -8,4 +8,11 @@
 		<OutputType>Library</OutputType>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="Azure.Storage.Blobs" Version="12.19.1" />
+	  <PackageReference Include="Azure.Storage.Common" Version="12.18.1" />
+	  <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+	  <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.2" />
+	</ItemGroup>
+
 </Project>
