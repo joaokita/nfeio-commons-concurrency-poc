@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{25765AB8-44D0-491A-AA37-71E0EFF351B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NFEio.Commons.Concurrency", "src\NFEio.Commons.Concurrency\NFEio.Commons.Concurrency.csproj", "{75619AE3-5AE7-4F74-8791-7E9328A4E440}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75619AE3-5AE7-4F74-8791-7E9328A4E440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75619AE3-5AE7-4F74-8791-7E9328A4E440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75619AE3-5AE7-4F74-8791-7E9328A4E440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75619AE3-5AE7-4F74-8791-7E9328A4E440}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{75619AE3-5AE7-4F74-8791-7E9328A4E440} = {25765AB8-44D0-491A-AA37-71E0EFF351B0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F043CD0-07CA-401E-8332-B08DDC711712}
+	EndGlobalSection
+EndGlobal
