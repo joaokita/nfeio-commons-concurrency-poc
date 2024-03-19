@@ -13,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\..\..\..\..\Users\JoãoKita\Downloads\nuget.config = ..\..\..\..\..\Users\JoãoKita\Downloads\nuget.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFEio.Commons.Concurrency.Tests", "test\NFEio.Commons.Concurrency.Tests\NFEio.Commons.Concurrency.Tests.csproj", "{E7EB8A37-A66E-4357-9F97-E7C2F12A82C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NFEio.Commons.Concurrency.Tests", "test\NFEio.Commons.Concurrency.Tests\NFEio.Commons.Concurrency.Tests.csproj", "{E7EB8A37-A66E-4357-9F97-E7C2F12A82C5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{28D1EB56-34C5-4B48-ACC2-34C839D07811}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{5E9BBC3E-0EFD-4B01-9A0D-17DCAAE5007A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
