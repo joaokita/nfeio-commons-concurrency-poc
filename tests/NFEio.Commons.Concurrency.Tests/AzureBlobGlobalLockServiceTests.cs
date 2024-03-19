@@ -1,5 +1,6 @@
 using Azure;
 using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
 
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -25,24 +26,38 @@ public class AzureBlobGlobalLockServiceTests
         _optionsMock = new Mock<IOptions<AzureBlobGlobalLockServiceOptions>>();
         _optionsMock.Setup(o => o.Value).Returns(new AzureBlobGlobalLockServiceOptions
         {
-            ConnectionString = "YourConnectionString",
-            ContainerName = "YourContainerName"
+            ConnectionString = null,
+            ContainerName = null
         });
 
-        _service = new AzureBlobGlobalLockService(_loggerMock.Object, _optionsMock.Object);
+        var blob = BlobsModelFactory.BlobItem("mocked.mocked.mocked.mocked");
+
+        var mock = GetBlobContainerClientMock();
+        _service = new AzureBlobGlobalLockService(_loggerMock.Object, mock, _optionsMock.Object);
     }
 
     [TestMethod]
-    public void AcquireLock_ShouldCreateBlob_WhenBlobDoesNotExist()
+    public void AcquireLock_ShouldReturnException_WhenBlobDoesNotExist()
     {
         // Arrange
         string lockName = "testLock";
         TimeSpan lockTime = TimeSpan.FromMinutes(1);
 
-        // Act
-        var globalLock = _service.AcquireLock(lockName, lockTime);
-
         // Assert
-        Assert.IsNotNull(globalLock);
+        Assert.ThrowsException<Exception>(() => _service.AcquireLock(lockName, lockTime));
+    }
+
+    private static BlobContainerClient GetBlobContainerClientMock()
+    {
+        var mock = new Mock<BlobContainerClient>();
+        
+        mock
+            .Setup(i => i.AccountName)
+            .Returns("Test account name");
+
+        mock.Setup(i => i.GetBlobClient(It.IsAny<string>()))
+            .Returns(new Mock<BlobClient>().Object);
+
+        return mock.Object;
     }
 }

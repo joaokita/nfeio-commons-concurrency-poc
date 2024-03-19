@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\..\..\..\..\Users\JoãoKita\Downloads\nuget.config = ..\..\..\..\..\Users\JoãoKita\Downloads\nuget.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFEio.Commons.Concurrency.Tests", "tests\NFEio.Commons.Concurrency.Tests\NFEio.Commons.Concurrency.Tests.csproj", "{8373FEA8-6E77-4621-84BB-95C96AAAD373}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NFEio.Commons.Concurrency.Tests", "tests\NFEio.Commons.Concurrency.Tests\NFEio.Commons.Concurrency.Tests.csproj", "{8373FEA8-6E77-4621-84BB-95C96AAAD373}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{839E3918-3D33-4BF7-8529-2E955E4EC921}"
 EndProject
@@ -37,6 +37,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{75619AE3-5AE7-4F74-8791-7E9328A4E440} = {25765AB8-44D0-491A-AA37-71E0EFF351B0}
+		{8373FEA8-6E77-4621-84BB-95C96AAAD373} = {839E3918-3D33-4BF7-8529-2E955E4EC921}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F043CD0-07CA-401E-8332-B08DDC711712}

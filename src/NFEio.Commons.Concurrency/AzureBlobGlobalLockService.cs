@@ -31,20 +31,27 @@ public class AzureBlobGlobalLockService : IGlobalLockService
 
 
     public AzureBlobGlobalLockService(ILogger<AzureBlobGlobalLockService> logger,
-        IOptions<AzureBlobGlobalLockServiceOptions> options)
+        BlobContainerClient? blobContainerClient, IOptions<AzureBlobGlobalLockServiceOptions>? options)
     {
         _logger = logger;
 
-        if (string.IsNullOrEmpty(options.Value.ConnectionString))
-            throw new ArgumentException(nameof(options.Value.ConnectionString));
+        if (blobContainerClient != null)
+        {
+            _blobServiceClient = blobContainerClient.GetBlobClient(options.Value.ContainerName);
+        }
+        else
+        {
+            if (string.IsNullOrEmpty(options.Value.ConnectionString))
+                throw new ArgumentException(nameof(options.Value.ConnectionString));
 
-        if (string.IsNullOrEmpty(options.Value.ContainerName))
-            throw new ArgumentException(nameof(AzureBlobGlobalLockServiceOptions.ContainerName));
+            if (string.IsNullOrEmpty(options.Value.ContainerName))
+                throw new ArgumentException(nameof(AzureBlobGlobalLockServiceOptions.ContainerName));
 
-        BlobServiceClient blobServiceClient = new BlobServiceClient(options.Value.ConnectionString);
-        BlobContainerClient blobContainerClient = blobServiceClient.GetBlobContainerClient(options.Value.ContainerName);
+            BlobServiceClient blobServiceClient = new BlobServiceClient(options.Value.ConnectionString);
+            BlobContainerClient blobContainerClientStep = blobServiceClient.GetBlobContainerClient(options.Value.ContainerName);
 
-        _blobServiceClient = blobContainerClient.GetBlobClient(options.Value.ContainerName);
+            _blobServiceClient = blobContainerClientStep.GetBlobClient(options.Value.ContainerName);
+        }
     }
 
     public IGlobalLock AcquireLock(string name, TimeSpan lockTime)
